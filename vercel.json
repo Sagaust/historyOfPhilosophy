@@ -1,0 +1,7 @@
+{
+  "build": {
+    "pnpm": {
+      "frozen-lockfile": false
+    }
+  }
+}
