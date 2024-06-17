@@ -1,7 +1,3 @@
 {
-  "build": {
-    "pnpm": {
-      "frozen-lockfile": false
-    }
-  }
+  "installCommand": "npm install"
 }
