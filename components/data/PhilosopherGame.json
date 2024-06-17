@@ -1,0 +1,65 @@
+{
+  "philosophers": [
+    { "id": "1", "name": "Socrates", "movement": "Ancient" },
+    { "id": "2", "name": "Plato", "movement": "Ancient" },
+    { "id": "3", "name": "Aristotle", "movement": "Ancient" },
+    { "id": "4", "name": "Augustine", "movement": "Medieval" },
+    { "id": "5", "name": "Thomas Aquinas", "movement": "Medieval" },
+    { "id": "6", "name": "Anselm of Canterbury", "movement": "Medieval" },
+    { "id": "7", "name": "Avicenna", "movement": "Medieval" },
+    { "id": "8", "name": "Averroes", "movement": "Medieval" },
+    { "id": "9", "name": "Maimonides", "movement": "Medieval" },
+    { "id": "10", "name": "Duns Scotus", "movement": "Medieval" },
+    { "id": "11", "name": "William of Ockham", "movement": "Medieval" },
+    { "id": "12", "name": "René Descartes", "movement": "Early Modern" },
+    { "id": "13", "name": "Baruch Spinoza", "movement": "Early Modern" },
+    {
+      "id": "14",
+      "name": "Gottfried Wilhelm Leibniz",
+      "movement": "Early Modern"
+    },
+    { "id": "15", "name": "John Locke", "movement": "Early Modern" },
+    { "id": "16", "name": "George Berkeley", "movement": "Early Modern" },
+    { "id": "17", "name": "David Hume", "movement": "Early Modern" },
+    { "id": "18", "name": "Immanuel Kant", "movement": "Early Modern" },
+    {
+      "id": "19",
+      "name": "Georg Wilhelm Friedrich Hegel",
+      "movement": "German Idealism"
+    },
+    {
+      "id": "20",
+      "name": "Arthur Schopenhauer",
+      "movement": "German Idealism"
+    },
+    {
+      "id": "21",
+      "name": "Friedrich Nietzsche",
+      "movement": "German Idealism"
+    },
+    { "id": "22", "name": "Jeremy Bentham", "movement": "Utilitarianism" },
+    { "id": "23", "name": "John Stuart Mill", "movement": "Utilitarianism" },
+    { "id": "24", "name": "Charles Sanders Peirce", "movement": "Pragmatism" },
+    { "id": "25", "name": "William James", "movement": "Pragmatism" },
+    { "id": "26", "name": "Gottlob Frege", "movement": "Analytic" },
+    { "id": "27", "name": "Bertrand Russell", "movement": "Analytic" },
+    { "id": "28", "name": "Ludwig Wittgenstein", "movement": "Analytic" },
+    { "id": "29", "name": "Edmund Husserl", "movement": "Phenomenology" },
+    { "id": "30", "name": "Martin Heidegger", "movement": "Phenomenology" },
+    { "id": "31", "name": "Jean-Paul Sartre", "movement": "Existentialism" },
+    { "id": "32", "name": "Søren Kierkegaard", "movement": "Existentialism" },
+    { "id": "33", "name": "Jacques Derrida", "movement": "Postmodernism" }
+  ],
+  "movements": {
+    "Ancient": [],
+    "Medieval": [],
+    "Early Modern": [],
+    "German Idealism": [],
+    "Utilitarianism": [],
+    "Pragmatism": [],
+    "Analytic": [],
+    "Phenomenology": [],
+    "Existentialism": [],
+    "Postmodernism": []
+  }
+}
