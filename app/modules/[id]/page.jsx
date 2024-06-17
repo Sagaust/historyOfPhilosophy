@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 const CourseDetail = () => {
   const router = useRouter();
@@ -10,28 +11,26 @@ const CourseDetail = () => {
 
   useEffect(() => {
     if (id) {
-      fetch(`/api/courseDetails/${id}`)
-        .then((response) => response.json())
-        .then((data) => setCourseDetail(data))
-        .catch((error) => console.error("Failed to fetch course details", error));
+      fetchCourseDetail();
     }
   }, [id]);
 
-  if (!courseDetail) {
-    return <div>Loading...</div>;
-  }
+  const fetchCourseDetail = async () => {
+    try {
+      const response = await axios.get(`/api/courses/${id}`);
+      setCourseDetail(response.data);
+    } catch (error) {
+      console.error("Failed to fetch course details", error);
+    }
+  };
+
+  if (!courseDetail) return <div>Loading...</div>;
 
   return (
     <div>
-      <h2>{courseDetail[0]?.course}</h2>
-      <ul>
-        {courseDetail.map((detail) => (
-          <li key={detail.topic_id}>
-            <h3>{detail.topic}</h3>
-            <p>{detail.Readings}</p>
-          </li>
-        ))}
-      </ul>
+      <h1>{courseDetail.course}</h1>
+      <p>{courseDetail.topic}</p>
+      <p>{courseDetail.Readings}</p>
     </div>
   );
 };

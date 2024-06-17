@@ -1,39 +1,28 @@
-"use client";
+// app/api/courses/[id]/route.js
+import { NextResponse } from "next/server";
+import clientPromise from "@/lib/mongodb";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+export async function GET(req, { params }) {
+  const client = await clientPromise;
+  const db = client.db("philosophy");
+  const { id } = params;
 
-const CourseDetail = () => {
-  const router = useRouter();
-  const { courseId } = router.query;
-  const [courseDetail, setCourseDetail] = useState(null);
-
-  useEffect(() => {
-    if (courseId) {
-      fetch(`/api/courseDetails/${courseId}`)
-        .then((response) => response.json())
-        .then((data) => setCourseDetail(data))
-        .catch((error) => console.error("Failed to fetch course details", error));
+  try {
+    const courseDetails = await db
+      .collection("courseDetails")
+      .findOne({ course_id: parseInt(id) }); // Ensure the id is parsed as an integer
+    if (!courseDetails) {
+      return NextResponse.json(
+        { error: "Course details not found" },
+        { status: 404 },
+      );
     }
-  }, [courseId]);
-
-  if (!courseDetail) {
-    return <div>Loading...</div>;
+    return NextResponse.json(courseDetails);
+  } catch (error) {
+    console.error("Failed to fetch course details:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch course details" },
+      { status: 500 },
+    );
   }
-
-  return (
-    <div>
-      <h2>{courseDetail[0]?.course}</h2>
-      <ul>
-        {courseDetail.map((detail) => (
-          <li key={detail.topic_id}>
-            <h3>{detail.topic}</h3>
-            <p>{detail.Readings}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-export default CourseDetail;
+}
