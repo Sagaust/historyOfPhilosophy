@@ -1,7 +1,12 @@
-import React from "react";
+// app/layout.tsx
+import React, { ReactNode } from "react";
 import Link from "next/link";
 
-const ModulesLayout = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const ModulesLayout = ({ children }: LayoutProps) => {
   return (
     <div>
       <header>
