@@ -1,23 +1,17 @@
-// app/layout.tsx
-import React, { ReactNode } from "react";
-import Link from "next/link";
+import "../styles/globals.css";
+import Layout from "../components/Layout";
 
-type LayoutProps = {
-  children: ReactNode;
+export const metadata = {
+  title: "Philosophy App",
+  description: "An app to explore the world of philosophy",
 };
 
-const ModulesLayout = ({ children }: LayoutProps) => {
+export default function RootLayout({ children }) {
   return (
-    <div>
-      <header>
-        <h1>Philosophy Modules</h1>
-        <nav>
-          <Link href="/modules">All Modules</Link>
-        </nav>
-      </header>
-      <main>{children}</main>
-    </div>
+    <html lang="en">
+      <body>
+        <Layout>{children}</Layout>
+      </body>
+    </html>
   );
-};
-
-export default ModulesLayout;
+}
