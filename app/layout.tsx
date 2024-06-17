@@ -1,17 +1,18 @@
-import "../styles/globals.css";
-import Layout from "../components/Layout";
+import React from "react";
+import Link from "next/link";
 
-export const metadata = {
-  title: "Philosophy App",
-  description: "An app to explore the world of philosophy",
+const ModulesLayout = ({ children }) => {
+  return (
+    <div>
+      <header>
+        <h1>Philosophy Modules</h1>
+        <nav>
+          <Link href="/modules">All Modules</Link>
+        </nav>
+      </header>
+      <main>{children}</main>
+    </div>
+  );
 };
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <Layout>{children}</Layout>
-      </body>
-    </html>
-  );
-}
+export default ModulesLayout;
