@@ -1,5 +1,4 @@
-// app/layout.js
-import "../styles/globals.css";
+import "./globals.css";
 import Layout from "../components/Layout";
 
 export const metadata = {

@@ -1,4 +1,3 @@
-// components/Layout.jsx
 "use client";
 
 import Header from "./Header";
